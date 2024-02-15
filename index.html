@@ -12,90 +12,105 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body class="font-poppins container mx-auto  border-4 border-red-700">
+<body class="font-poppins container mx-auto">
     <main
         class="text-white text-center flex justify-center items-center min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-top">
         <!-- home screen -->
-        <section class="home space-y-8 ">
+        <section id="home-screen" class=" space-y-8 ">
             <h1 class="uppercase text-9xl font-anton">Alpha Clash Pro</h1>
-            <p class="font-semibold text-xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-            <button class="btn hover:bg-green-700 hover:text-white border-none w-28  bg-yellow-300 font-bold text-2xl">Play</button>
+            <p class="font-semibold text-xl">Unleash Your Keyboard Kung Fu : Press "Enter" to Play</p>
+            <button onclick="play()"
+                class="btn animate- hover:bg-green-700 hover:text-white border-none  bg-yellow-400 font-bold text-2xl">Play
+                Now</button>
         </section>
         <!-- play ground start -->
-        <section class="play-ground hidden ">
+        <section id="play-ground" class=" hidden ">
             <div class="">
                 <!-- screen -->
                 <div
-                    class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] flex justify-center ">
+                    class="artboard artboard-horizontal phone- h-[290px] w-[990px] border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] flex justify-center ">
                     <div class="w-[400px] ">
                         <p class="bg-[#2F2941] font-medium text-lg rounded-b-xl pb-3 ">Don't watch keyboard while
                             playing...</p>
-                        <p class="mt-9 text-black font-semibold text-9xl">Y</p>
+                        <p id="current-alphabet" class="mt-9 text-[black] font-semibold text-9xl uppercase">Y</p>
                     </div>
                 </div>
 
             </div>
             <!-- keyboard start -->
-            <div class="text-black font-medium w-full pt-7">
-                <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd">q</kbd>
-                    <kbd class="kbd">w</kbd>
-                    <kbd class="kbd">e</kbd>
-                    <kbd class="kbd">r</kbd>
-                    <kbd class="kbd">t</kbd>
-                    <kbd class="kbd bg-yellow-500">y</kbd>
-                    <kbd class="kbd">u</kbd>
-                    <kbd class="kbd">i</kbd>
-                    <kbd class="kbd">o</kbd>
-                    <kbd class="kbd">p</kbd>
+            <div class="text-black font-medium w-full pt-5">
+                <div class="flex justify-center gap-[5px] text-xl my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
                 </div>
-                <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd">a</kbd>
-                    <kbd class="kbd">s</kbd>
-                    <kbd class="kbd">d</kbd>
-                    <kbd class="kbd">f</kbd>
-                    <kbd class="kbd">g</kbd>
-                    <kbd class="kbd">h</kbd>
-                    <kbd class="kbd">j</kbd>
-                    <kbd class="kbd">k</kbd>
-                    <kbd class="kbd">l</kbd>
+                <div class="flex justify-center gap-[5px] text-xl my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
                 </div>
-                <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd">z</kbd>
-                    <kbd class="kbd">x</kbd>
-                    <kbd class="kbd">c</kbd>
-                    <kbd class="kbd">v</kbd>
-                    <kbd class="kbd">b</kbd>
-                    <kbd class="kbd">n</kbd>
-                    <kbd class="kbd">m</kbd>
-                    <kbd class="kbd">/</kbd>
+                <div class="flex justify-center gap-[5px] text-xl my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
                 </div>
             </div>
-            <div class="space-x-[700px]">
-                <button class="btn bg-[#894189] w-36  text-white font-medium text-xl rounded-[30px] border-none">
-                    Life <img src="images/Group 23.png" alt=""> 1
+            <div class="space-x-[635px] mt-10">
+                <button
+                    class="btn hover:bg-[#894189] bg-[#894189] w-[150px]  text-white font-medium text-xl rounded-[30px] border-none">
+                    Life <img src="images/Group 23.png" alt=""> <span id="life" class="">5</span>
                 </button>
 
 
-                <button class="btn  bg-[#360490] w-36 text-white font-medium text-xl rounded-[30px] border-none">
-                    Score <img src="images/monetization_on.png" alt=""> 1
+                <button
+                    class="btn hover:bg-[#360490]   bg-[#360490] w-[155px] text-white font-medium text-xl rounded-[30px] border-none">
+                    Score <img src="images/monetization_on.png" alt="">
+                    <span id="score" class="animate-bounce">0</span>
                 </button>
+            </div>
+            <div>
+                <h4 class="font-semibold text-xl animate-bounce text-[yellow]">To Stop the game please press "Enter" key</h4>
+                <kbd id="" class="kbd text-xl  text-black font-bold mt-2">Enter</kbd>
             </div>
         </section>
 
         <!-- final score -->
-        <section class="score hidden ">
+        <section id="final-score" class=" hidden ">
             <div class="space-y-5 bg-[#FFFFFF33] rounded-2xl p-10">
+                <h4 class="text-4xl font-semibold text-[lime] animate-bounce hover:start-2 hover:animate-spin">Game Over!
+                </h4>
                 <h1 class=" text-8xl ">
-                    <span class="font-bold">Score:</span>
-                    <span>14</span>
+                    <span class="font-bold ">Score:</span>
+                    <span id="last-score">14</span>
                 </h1>
-                <button class="btn text-2xl border-none bg-yellow-300 hover:text-white font-semibold hover:bg-green-600">Play Again</button>
+                <button onclick="play()"
+                    class="btn text-2xl border-none bg-yellow-400 hover:text-white font-semibold hover:bg-green-600 ">Play
+                    Again</button>
                 <p class="text-xl font-bold">Practice will make you pro</p>
             </div>
 
         </section>
     </main>
+    <script src="Javascript/utility.js"></script>
+    <script src="Javascript/index.js"></script>
 </body>
 
 </html>
